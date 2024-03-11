@@ -18,7 +18,8 @@ struct NoteDetailView: View {
     var body: some View {
         Form {
             TextField("Title", text: $newTitle)
-            TextField("Body", text: $newBody)
+            TextEditor(text: $newBody)
+                .foregroundStyle(.secondary)
             Button("Save") {
                 viewModel.updateNote(note, with: newTitle, newBody: newBody)
                 presentationMode.wrappedValue.dismiss()

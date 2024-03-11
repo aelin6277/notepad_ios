@@ -12,6 +12,7 @@ import CoreData
 struct ContentView: View {
     @StateObject private var viewModel = NotesViewModel()
     @State private var showingAddNoteView = false
+    var formatter = RelativeDateTimeFormatter()
 
     var body: some View {
         NavigationView {
@@ -19,6 +20,10 @@ struct ContentView: View {
                 ForEach(viewModel.notes) { note in
                     NavigationLink(destination: NoteDetailView(note: note, viewModel: viewModel)) {
                         Text(note.title)
+                        
+                        Text(formatter.localizedString(for: note.date, relativeTo: Date()))
+                        .foregroundStyle(.secondary)
+                            
                     }
                 }
                 .onDelete(perform: viewModel.deleteNote)
@@ -32,6 +37,7 @@ struct ContentView: View {
             .sheet(isPresented: $showingAddNoteView) {
                 AddNoteView(viewModel: viewModel)
             }
+        //    .navigationBarItems(trailing: self.timestamp())
         }
     }
 }

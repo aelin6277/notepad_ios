@@ -32,6 +32,7 @@ class NotesViewModel: ObservableObject {
         if let index = notes.firstIndex(where: { $0.id == note.id }) {
             notes[index].title = newTitle
             notes[index].content = newBody
+            notes[index].date = Date()
             saveNotes()
         }
     }

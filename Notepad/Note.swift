@@ -3,7 +3,7 @@
 //  NotepadApp
 //
 //  Created by Elin.Andersson on 2024-03-06.
-//Skapa en Note-struktur som representerar en anteckning. Den ska innehålla en titel och en kropp.
+//Skapa en Note-struktur som representerar en anteckning.
 
 import Foundation
 

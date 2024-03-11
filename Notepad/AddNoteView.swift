@@ -3,8 +3,7 @@
 //  NotepadApp
 //
 //  Created by Elin.Andersson on 2024-03-06.
-//
-
+//AddNoteView är en del av användargränssnittet och spelar en viktig roll i hur användarna kan interagera med min app genom att lägga till nya anteckningar.AddNoteView representerar en "View" i detta sammanhang.
 import Foundation
 import SwiftUI
 

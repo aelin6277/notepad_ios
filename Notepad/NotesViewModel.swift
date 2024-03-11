@@ -3,12 +3,8 @@
 //  NotesViewModel
 //
 //  Created by Elin.Andersson on 2024-03-06.
+
 //NotesViewModel kommer att hantera all logik för att lägga till, ta bort och uppdatera anteckningar. Den kommer också att ansvara för att ladda och spara anteckningar till UserDefaults.
-
-//I det här fallet behöver NotesViewModel-klassen endast importera Foundation för grundläggande funktionalitet som att arbeta med UserDefaults, kodning/dekodning (Codable), och hantera samlingar som Array. ObservableObject och @Published som används för att skapa bindningar mellan dina SwiftUI-vyer och denna viewmodel ingår också i Foundation när du arbetar med SwiftUI.
-//Om din Note-struktur ligger i en separat fil och den inte använder specifika SwiftUI-egenskaper eller andra bibliotek, behöver den filen också bara importera Foundation.
-
-//Däremot, om du använder UI-element, vyer, eller vissa specifika funktioner från SwiftUI i din viewmodel (vilket är mindre vanligt eftersom viewmodellen bör hållas separerad från vyer), skulle du behöva lägga till import SwiftUI i toppen av din fil. Men för det här exemplet och för de flesta MVVM-mönster i SwiftUI bör import Foundation vara tillräckligt för din viewmodel.
 
 import Foundation
 class NotesViewModel: ObservableObject {

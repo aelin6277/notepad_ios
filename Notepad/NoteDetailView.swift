@@ -20,7 +20,7 @@ struct NoteDetailView: View {
             TextField("Title", text: $newTitle)
             TextEditor(text: $newBody)
                 .foregroundStyle(.secondary)
-                .font(.caption)
+               // .font(.caption)
             Button("Save") {
                 viewModel.updateNote(note, with: newTitle, newBody: newBody)
                 presentationMode.wrappedValue.dismiss()

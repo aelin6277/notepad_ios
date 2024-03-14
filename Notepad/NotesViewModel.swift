@@ -15,7 +15,9 @@ class NotesViewModel: ObservableObject {
     }
 
     func addNote(_ note: Note) {
-        notes.append(note)
+        let newNote = note
+        notes.append(newNote)
+        notes.sort(by: { $0.date > $1.date })
         saveNotes()
     }
 
@@ -36,7 +38,7 @@ class NotesViewModel: ObservableObject {
     private func loadNotes() {
         if let notesData = UserDefaults.standard.data(forKey: "notes"),
            let decodedNotes = try? JSONDecoder().decode([Note].self, from: notesData) {
-            self.notes = decodedNotes
+            self.notes = decodedNotes.sorted(by: { $0.date > $1.date })
         }
     }
 

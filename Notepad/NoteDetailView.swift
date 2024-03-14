@@ -21,6 +21,7 @@ struct NoteDetailView: View {
             TextEditor(text: $newBody)
                 .foregroundStyle(.secondary)
                // .font(.caption)
+                .padding(.bottom, 20)
             Button("Save") {
                 viewModel.updateNote(note, with: newTitle, newBody: newBody)
                 presentationMode.wrappedValue.dismiss()
